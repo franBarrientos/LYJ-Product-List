@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import axios from "axios";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const mercadopagoToken = process.env.NEXT_PUBLIC_MERCADOPAGO_TOKEN;
 
 export async function POST(req: Request) {
   try {
@@ -37,7 +38,7 @@ export async function POST(req: Request) {
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer TEST-7543953640008760-071220-1f082d2944adf937e2bf4635730bfe8a-1216931427`, // Reemplaza con tu Access Token
+          Authorization: `Bearer ${mercadopagoToken}`, // Reemplaza con tu Access Token
         },
       }
     );
