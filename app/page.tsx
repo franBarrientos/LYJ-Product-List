@@ -36,6 +36,9 @@ export default function Home() {
   >([]);
 
   useEffect(() => {
+    console.log(process.env.NEXT_PUBLIC_SITE_URL);
+    console.log(process.env.MERCADOPAGO_ACCESS_TOKEN);
+
     fetch(PRECIOS_URL)
       .then((res) => res.json())
       .then((data) => {
