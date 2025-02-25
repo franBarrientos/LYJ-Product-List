@@ -19,8 +19,7 @@ export async function POST(req: Request) {
     }));
 
     console.log("Items:", items);
-    console.log(process.env.MERCADOPAGO_ACCESS_TOKEN);
-    console.log(process.env.LALA);
+    // console.log(process.env.MERCADOPAGO_ACCESS_TOKEN);
     // Configura la preferencia de pago
     const preference = {
       items,
