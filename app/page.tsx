@@ -68,7 +68,7 @@ export default function Home() {
       let message = "";
 
       if (status === "approved") {
-        message = `✅ ¡Pago exitoso!\nID de pago: ${paymentId}`;
+        message = `✅ ¡Pago exitoso!\nID de pago: ${paymentId}\nEn breve nos comunicaremos con usted para confirmar los detalles.`;
       } else if (status === "pending") {
         message =
           "⏳ Tu pago está en proceso, te notificaremos cuando se confirme.";

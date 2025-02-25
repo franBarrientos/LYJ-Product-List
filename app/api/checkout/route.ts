@@ -24,9 +24,9 @@ export async function POST(req: Request) {
     const preference = {
       items,
       back_urls: {
-        success: `${siteUrl}/?status=approved?payment_id={payment_id}`,
-        failure: `${siteUrl}/?status=failure?payment_id={payment_id}`,
-        pending: `${siteUrl}/?status=pending?payment_id={payment_id}`,
+        success: `${siteUrl}/?status=approved&&payment_id={payment_id}`,
+        failure: `${siteUrl}/?status=failure&&payment_id={payment_id}`,
+        pending: `${siteUrl}/?status=pending&&payment_id={payment_id}`,
       },
       auto_return: "approved",
     };
