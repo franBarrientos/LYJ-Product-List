@@ -27,10 +27,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={inter.className}>
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+        </CartProvider>
       </body>
     </html>
   );
 }
 
 import "./globals.css";
+import { Suspense } from "react";
