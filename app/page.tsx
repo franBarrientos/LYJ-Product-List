@@ -62,13 +62,12 @@ export default function Home() {
 
   useEffect(() => {
     const status = searchParams.get("status");
-    const paymentId = searchParams.get("payment_id");
 
     if (status) {
       let message = "";
 
       if (status === "approved") {
-        message = `✅ ¡Pago exitoso!\nID de pago: ${paymentId}\nEn breve nos comunicaremos con usted para confirmar los detalles.`;
+        message = `✅ ¡Pago exitoso!\nID de pago: 104\nEn breve nos comunicaremos con usted para confirmar los detalles.`;
       } else if (status === "pending") {
         message =
           "⏳ Tu pago está en proceso, te notificaremos cuando se confirme.";
@@ -77,7 +76,7 @@ export default function Home() {
       }
 
       toast.success(message, {
-        duration: 12000, // Muestra la alerta por más tiempo
+        duration: 15000, // Muestra la alerta por más tiempo
         icon: status === "approved" ? "💳" : "⚠️",
         style: {
           border: `1px solid ${status === "approved" ? "green" : "red"}`,

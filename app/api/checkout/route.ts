@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     // Estructura los productos para Mercado Pago
     const items = cart.map((item: any) => ({
       title: item.name,
-      description: `${item.name} | ${item.brand}`,
+      description: `${item.name}`,
       quantity: item.quantity,
       currency_id: "ARS",
       unit_price: item.price,
@@ -24,9 +24,9 @@ export async function POST(req: Request) {
     const preference = {
       items,
       back_urls: {
-        success: `${siteUrl}/?status=approved&&payment_id={payment_id}`,
-        failure: `${siteUrl}/?status=failure&&payment_id={payment_id}`,
-        pending: `${siteUrl}/?status=pending&&payment_id={payment_id}`,
+        success: `${siteUrl}/?status=approved`,
+        failure: `${siteUrl}/?status=failure`,
+        pending: `${siteUrl}/?status=pending`,
       },
       auto_return: "approved",
     };
