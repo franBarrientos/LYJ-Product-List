@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     // Estructura los productos para Mercado Pago
     const items = cart.map((item: any) => ({
       title: item.name,
-      description: item.brand,
+      description: `${item.name} | ${item.brand}`,
       quantity: item.quantity,
       currency_id: "ARS",
       unit_price: item.price,

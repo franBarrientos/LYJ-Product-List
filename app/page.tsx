@@ -87,15 +87,15 @@ export default function Home() {
         },
       });
 
-      const params = new URLSearchParams(searchParams.toString());
-      params.delete("status");
-      params.delete("payment_id");
+      // const params = new URLSearchParams(searchParams.toString());
+      // params.delete("status");
+      // params.delete("payment_id");
 
-      const newUrl = `${pathname}${
-        params.toString() ? "?" + params.toString() : ""
-      }`;
+      // const newUrl = `${pathname}${
+      // params.toString() ? "?" + params.toString() : ""
+      // }`;
 
-      router.replace(newUrl);
+      // router.replace(newUrl);
     }
   }, [searchParams, pathname, router]);
 
