@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import axios from "axios";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-const mercadopagoToken = process.env.NEXT_PUBLIC_MERCADOPAGO_TOKEN;
+const mercadopagoToken = process.env.MERCADOPAGO_ACCESS_TOKEN;
 
 export async function POST(req: Request) {
   try {
@@ -19,7 +19,8 @@ export async function POST(req: Request) {
     }));
 
     console.log("Items:", items);
-
+    console.log(process.env.MERCADOPAGO_ACCESS_TOKEN);
+    console.log(process.env.LALA);
     // Configura la preferencia de pago
     const preference = {
       items,
