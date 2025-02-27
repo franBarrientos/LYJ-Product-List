@@ -61,6 +61,18 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
+    const watchId = searchParams.get("id"); // Obtener el ID del reloj de la URL
+    if (watchId && watches.length > 0) {
+      const foundWatch = watches.find(
+        (watch) => watch.id.toString() === watchId
+      );
+      if (foundWatch) {
+        setSelectedWatch(foundWatch);
+      }
+    }
+  }, [searchParams, watches]); // Se ejecuta cuando los searchParams o los watches cambian
+
+  useEffect(() => {
     const status = searchParams.get("status");
 
     if (status) {
