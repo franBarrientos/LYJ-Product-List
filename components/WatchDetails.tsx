@@ -11,6 +11,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { ArrowLeft } from "lucide-react";
 
 type WatchDetailsProps = {
   watch: {
@@ -93,9 +94,15 @@ export function WatchDetails({
               <Button className="w-full mt-6" onClick={onAddToCart}>
                 Agregar al Carrito
               </Button>
-              <Button className="w-2/3" onClick={handleCopyUrl}>
-                Copiar Link
-              </Button>
+              <div className="flex gap-2">
+                <Button className="w-1/3" onClick={onClose}>
+                  <ArrowLeft size={16} />
+                  Atrás
+                </Button>
+                <Button className="w-2/3" onClick={handleCopyUrl}>
+                  Copiar Link
+                </Button>
+              </div>
             </div>
           </div>
         </div>
