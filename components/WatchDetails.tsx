@@ -32,6 +32,19 @@ export function WatchDetails({
   onClose,
   onAddToCart,
 }: WatchDetailsProps) {
+  const handleCopyUrl = () => {
+    // You can adjust the URL construction as needed.
+    const baseUrl = window.location.href.split("?")[0]; // get base url without query
+    const urlWithId = `${baseUrl}?id=${watch.id}`;
+    navigator.clipboard
+      .writeText(urlWithId)
+      .then(() => {
+        console.log("URL copied to clipboard:", urlWithId);
+      })
+      .catch((error) => {
+        console.error("Failed to copy URL: ", error);
+      });
+  };
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-sm md:max-w-2xl w-[90%] sm:w-auto max-h-[90vh] overflow-y-auto rounded-sm">
@@ -76,9 +89,14 @@ export function WatchDetails({
                 </ul>
               </div>
             </div>
-            <Button className="w-full mt-6" onClick={onAddToCart}>
-              Agregar al Carrito
-            </Button>
+            <div className="flex flex-col gap-4 mt-6">
+              <Button className="w-full mt-6" onClick={onAddToCart}>
+                Agregar al Carrito
+              </Button>
+              <Button className="w-2/3" onClick={handleCopyUrl}>
+                Copiar Link
+              </Button>
+            </div>
           </div>
         </div>
       </DialogContent>
